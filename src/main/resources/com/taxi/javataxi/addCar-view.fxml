@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<HBox prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.taxi.javataxi.Controllers.AddCar">
+   <children>
+      <VBox maxWidth="-Infinity" prefWidth="300.0" HBox.hgrow="ALWAYS">
+         <children>
+            <Label text="Номер свидетельства о регистрации ТС" />
+            <TextField fx:id="tfOrderNumber">
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </TextField>
+            <Label layoutX="10.0" layoutY="10.0" text="Марка автомобиля" />
+            <TextField fx:id="tfBrand" layoutX="10.0" layoutY="27.0">
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </TextField>
+            <Label layoutX="10.0" layoutY="52.0" text="Состояние автомобиля" />
+            <ComboBox fx:id="cbCarStatus" maxWidth="1.7976931348623157E308">
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </ComboBox>
+            <Label layoutX="10.0" layoutY="94.0" text="Цвет машины" />
+            <TextField fx:id="tfColor" layoutX="10.0" layoutY="111.0">
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </TextField>
+            <Label layoutX="10.0" layoutY="136.0" text="Гос. номер" />
+            <TextField fx:id="tfGosNumber" layoutX="10.0" layoutY="153.0">
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </TextField>
+            <Label layoutX="10.0" layoutY="178.0" text="Количество свободных мест" />
+            <ComboBox fx:id="cbFreePlacesCount" layoutX="20.0" layoutY="121.0" maxWidth="1.7976931348623157E308">
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </ComboBox>
+            <Label layoutX="10.0" layoutY="220.0" text="Год выпуска" />
+            <ComboBox fx:id="tfCreatedYear" maxWidth="1.7976931348623157E308">
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </ComboBox>
+            <Label layoutX="10.0" layoutY="262.0" text="Владелец" />
+            <ComboBox fx:id="cbOwner" layoutX="20.0" layoutY="247.0" maxWidth="1.7976931348623157E308" />
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </VBox>
+      <Separator orientation="VERTICAL" prefHeight="200.0" />
+      <VBox maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS">
+         <children>
+            <HBox>
+               <children>
+                  <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onAddPhoto" prefHeight="35.0" text="Добавить фото" HBox.hgrow="ALWAYS">
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" top="10.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button layoutX="10.0" layoutY="10.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onDelete" prefHeight="35.0" text="Удалить фото" HBox.hgrow="ALWAYS">
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+            <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" VBox.vgrow="ALWAYS">
+               <children>
+                  <ImageView fx:id="imageView" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+               </children>
+            </AnchorPane>
+            <HBox layoutX="10.0" layoutY="10.0">
+               <children>
+                  <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onDone" prefHeight="35.0" style="-fx-background-color: #80FF80;" text="Подтвердить" HBox.hgrow="ALWAYS">
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" top="10.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button layoutX="10.0" layoutY="10.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onCancel" prefHeight="35.0" style="-fx-background-color: #FF8080;" text="Отмена" HBox.hgrow="ALWAYS">
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</HBox>

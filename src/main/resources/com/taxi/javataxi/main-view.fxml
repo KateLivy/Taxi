@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<TabPane fx:id="tabPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1100.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.taxi.javataxi.Controllers.MainController">
+    <tabs>
+        <Tab fx:id="tabLivings" text="Заказы">
+            <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                    <children>
+                        <HBox prefHeight="571.0" prefWidth="1000.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                            <children>
+                                <TableView fx:id="livingsTable" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS">
+                                    <columns>
+                              <TableColumn fx:id="orderIdCol" prefWidth="75.0" text="id" visible="false" />
+                                        <TableColumn fx:id="dTOrdColumn" prefWidth="75.0" text="Дата и время заказа" />
+                                        <TableColumn fx:id="clRegOColumn" prefWidth="75.0" text="Регион отправления" />
+                                        <TableColumn fx:id="clTownOColumn" prefWidth="75.0" text="Населённый пункт отправления" />
+                                        <TableColumn fx:id="clStrOColumn" prefWidth="75.0" text="Улица отправления" />
+                                        <TableColumn fx:id="clHomeOColumn" prefWidth="75.0" text="Дом отправления" />
+                                        <TableColumn fx:id="arRegOColumn" prefWidth="75.0" text="Регион прибытия" />
+                                        <TableColumn fx:id="arTownOColumn" prefWidth="75.0" text="Населённый пункт прибытия" />
+                              <TableColumn fx:id="arStrOColumn" prefWidth="75.0" text="Улица прибытия" />
+                              <TableColumn fx:id="arHomeOColumn" prefWidth="75.0" text="Дом прибытия" />
+                              <TableColumn fx:id="dSurnameOColumn" prefWidth="75.0" text="Фамилия водителя" />
+                              <TableColumn fx:id="dNameOColumn" prefWidth="75.0" text="Имя водителя" />
+                              <TableColumn fx:id="dPatronymOColumn" prefWidth="75.0" text="Отчество водителя" />
+                              <TableColumn fx:id="carNumOColumn" prefWidth="75.0" text="Машина" />
+                              <TableColumn fx:id="numClOColumn" prefWidth="75.0" text="Номер клиента" />
+                              <TableColumn fx:id="priceOColumn" prefWidth="75.0" text="Цена поездки" />
+                              <TableColumn fx:id="complMarkColumn" prefWidth="75.0" text="Отметка о выполнении заказа" />
+                                    </columns>
+                                    <columnResizePolicy>
+                                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                    </columnResizePolicy>
+                                </TableView>
+                                <Accordion focusTraversable="false" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="250.0" HBox.hgrow="ALWAYS">
+                                    <panes>
+                                        <TitledPane animated="false" focusTraversable="false" text="Меню">
+                                            <content>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                    <children>
+                                                        <VBox prefHeight="520.0" prefWidth="295.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                            <children>
+                                                <Button defaultButton="true" focusTraversable="false" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onCreateOrder" text="Создать заказ">
+                                                   <VBox.margin>
+                                                      <Insets bottom="10.0" />
+                                                   </VBox.margin>
+                                                </Button>
+                                                                <Button focusTraversable="false" layoutX="10.0" layoutY="45.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onUpdate" text="Все заказы">
+                                                                    <VBox.margin>
+                                                                        <Insets bottom="10.0" />
+                                                                    </VBox.margin>
+                                                                </Button>
+                                                                <Button focusTraversable="false" layoutX="10.0" layoutY="10.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onNowOrders" text="Действующие заказы">
+                                                                    <VBox.margin>
+                                                                        <Insets bottom="10.0" />
+                                                                    </VBox.margin>
+                                                                </Button>
+                                                <Button focusTraversable="false" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onEditOrder" text="Изменить состояние заказа на:">
+                                                   <VBox.margin>
+                                                      <Insets bottom="10.0" />
+                                                   </VBox.margin>
+                                                </Button>
+                                                <ComboBox fx:id="isDone" focusTraversable="false" maxWidth="1.7976931348623157E308">
+                                                   <VBox.margin>
+                                                      <Insets bottom="10.0" />
+                                                   </VBox.margin>
+                                                </ComboBox>
+                                                            </children>
+                                                        </VBox>
+                                                    </children>
+                                                </AnchorPane>
+                                            </content>
+                                        </TitledPane>
+                                    </panes>
+                                </Accordion>
+                            </children>
+                        </HBox>
+                    </children>
+                </AnchorPane>
+            </content>
+        </Tab>
+        <Tab fx:id="tabClients" text="Клиенты">
+            <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                    <children>
+                        <HBox prefHeight="571.0" prefWidth="1000.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                            <children>
+                                <TableView fx:id="clientsTable" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS">
+                                    <columns>
+                              <TableColumn fx:id="clientIdCol" prefWidth="75.0" visible="false" />
+                                        <TableColumn fx:id="clientsColumn" prefWidth="75.0" text="Номер клиента" />
+                                    </columns>
+                                    <columnResizePolicy>
+                                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                    </columnResizePolicy>
+                                </TableView>
+                                <Accordion focusTraversable="false" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="250.0" HBox.hgrow="ALWAYS">
+                                    <panes>
+                                        <TitledPane animated="false" focusTraversable="false" text="Меню">
+                                            <content>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                    <children>
+                                                        <VBox prefHeight="520.0" prefWidth="295.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                            <children>
+                                                                <Button defaultButton="true" focusTraversable="false" layoutX="10.0" layoutY="45.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onCreateCl" text="Зарегистрировать нового клиента">
+                                                                    <VBox.margin>
+                                                                        <Insets bottom="10.0" />
+                                                                    </VBox.margin>
+                                                                </Button>
+                                                <Button focusTraversable="false" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onDeleteClient" text="Удалить клиента" />
+                                                            </children>
+                                                        </VBox>
+                                                    </children>
+                                                </AnchorPane>
+                                            </content>
+                                        </TitledPane>
+                                    </panes>
+                                </Accordion>
+                            </children>
+                        </HBox>
+                    </children>
+                </AnchorPane>
+            </content>
+        </Tab>
+        <Tab fx:id="tabApartments" text="Автомобили">
+            <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                    <children>
+                        <HBox prefHeight="571.0" prefWidth="1000.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                            <children>
+                                <TableView fx:id="apartmentsTable" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS">
+                                    <columns>
+                              <TableColumn fx:id="driversId" prefWidth="75.0" text="Column X" visible="false" />
+                                        <TableColumn fx:id="owner" prefWidth="75.0" text="Владелец" />
+                                        <TableColumn fx:id="ncrv" prefWidth="75.0" text="Номер свидетельства о регистрации ТС" />
+                                        <TableColumn fx:id="stateCar" prefWidth="75.0" text="Состояние автомобиля" />
+                                        <TableColumn fx:id="yearCar" prefWidth="75.0" text="Год выпуска" />
+                                        <TableColumn fx:id="color" prefWidth="75.0" text="Цвет" />
+                                        <TableColumn fx:id="brand" prefWidth="75.0" text="Марка" />
+                                        <TableColumn fx:id="stNum" prefWidth="75.0" text="Гос. номер" />
+                                        <TableColumn fx:id="numOfSeats" prefWidth="75.0" text="Количество мест" />
+                                    </columns>
+                                    <columnResizePolicy>
+                                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                    </columnResizePolicy>
+                                </TableView>
+                                <Accordion focusTraversable="false" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="250.0" HBox.hgrow="ALWAYS">
+                                    <panes>
+                                        <TitledPane animated="false" focusTraversable="false" text="Меню">
+                                            <content>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                    <children>
+                                                        <VBox prefHeight="520.0" prefWidth="295.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                            <children>
+                                                                <Button defaultButton="true" focusTraversable="false" layoutX="10.0" layoutY="10.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onCreateCar" text="Добавить авто">
+                                                                    <VBox.margin>
+                                                                        <Insets bottom="10.0" />
+                                                                    </VBox.margin>
+                                                                </Button>
+                                                                <Button focusTraversable="false" layoutX="10.0" layoutY="45.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onStateCar" text="Изменить состояние авто на:">
+                                                                    <VBox.margin>
+                                                                        <Insets bottom="10.0" top="30.0" />
+                                                                    </VBox.margin>
+                                                                </Button>
+                                                <ComboBox fx:id="statesOfCar" focusTraversable="false" maxWidth="1.7976931348623157E308" prefWidth="150.0" />
+                                                            </children>
+                                                        </VBox>
+                                                    </children>
+                                                </AnchorPane>
+                                            </content>
+                                        </TitledPane>
+                                    </panes>
+                                </Accordion>
+                            </children>
+                        </HBox>
+                    </children>
+                </AnchorPane>
+            </content>
+        </Tab>
+      <Tab text="Водители">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <HBox prefHeight="571.0" prefWidth="1000.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <TableView fx:id="apartmentsTable1" maxWidth="1.7976931348623157E308" onMouseClicked="#onSumm" HBox.hgrow="ALWAYS">
+                           <columns>
+                              <TableColumn fx:id="dLastName" prefWidth="75.0" text="Фамилия водителя" />
+                              <TableColumn fx:id="dName" prefWidth="75.0" text="Имя водителя" />
+                              <TableColumn fx:id="dPatronym" prefWidth="75.0" text="Отчество водителя" />
+                              <TableColumn fx:id="isWork" prefWidth="75.0" text="Состояние водителя" />
+                              <TableColumn fx:id="stNumDriv" prefWidth="75.0" text="Гос. номер автомобиля" />
+                              <TableColumn fx:id="isOwner" prefWidth="75.0" text="Яв-ся ли собственником данного авто (1- да, 0 - нет)" />
+                              <TableColumn fx:id="numDriver" prefWidth="75.0" text="Номер водительского удостоверения" />
+                              <TableColumn fx:id="dtDriver" prefWidth="75.0" text="Дата выдачи водительского удостоверения" />
+                           </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                        </TableView>
+                        <Accordion focusTraversable="false" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="250.0" HBox.hgrow="ALWAYS">
+                           <panes>
+                              <TitledPane animated="false" focusTraversable="false" text="Меню">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <VBox prefHeight="520.0" prefWidth="295.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <children>
+                                                <Button defaultButton="true" focusTraversable="false" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onCreateDriv" text="Добавить водителя">
+                                                   <VBox.margin>
+                                                      <Insets bottom="10.0" />
+                                                   </VBox.margin>
+                                                </Button>
+                                                <Button focusTraversable="false" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onOrders" prefWidth="229.0" text="Посмотреть заказы выбранного водителя" textAlignment="CENTER" wrapText="true" />
+                                                <Label text="Сумма заказов водителя составляет:">
+                                                   <VBox.margin>
+                                                      <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                                <Label fx:id="sumOfOrders">
+                                                   <VBox.margin>
+                                                      <Insets left="10.0" right="10.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                                <Button focusTraversable="false" layoutX="10.0" layoutY="45.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onStateDriv" text="Изменить состояние водителя на:">
+                                                   <VBox.margin>
+                                                      <Insets bottom="10.0" top="30.0" />
+                                                   </VBox.margin>
+                                                </Button>
+                                                <ComboBox fx:id="statesDriv" focusTraversable="false" maxWidth="1.7976931348623157E308" prefWidth="150.0" />
+                                                <Button focusTraversable="false" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onOwnDriv" text="Изменить состояние владения авто">
+                                                   <VBox.margin>
+                                                      <Insets bottom="10.0" top="30.0" />
+                                                   </VBox.margin>
+                                                </Button>
+                                                <ComboBox fx:id="ownDriv" focusTraversable="false" maxWidth="1.7976931348623157E308" prefWidth="150.0" />
+                                                <Button focusTraversable="false" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onEditStNum" text="Изменить номер машины на:">
+                                                   <VBox.margin>
+                                                      <Insets bottom="10.0" top="30.0" />
+                                                   </VBox.margin>
+                                                </Button>
+                                                <ComboBox fx:id="cbStNumDriv" focusTraversable="false" maxWidth="1.7976931348623157E308" prefWidth="150.0" />
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </TitledPane>
+                           </panes>
+                        </Accordion>
+                     </children>
+                  </HBox>
+               </children>
+            </AnchorPane>
+        </content>
+      </Tab>
+    </tabs>
+</TabPane>
